@@ -12,6 +12,20 @@ export const AppProvider = ({ children }) => {
   const [lotteryPlayers, setLotteryPlayers] = useState([])
   const [lastWinner, setLastWinner] = useState()
   const [lotteryId, setLotteryId] = useState()
+  useEffect(() => {
+   
+    updateLottery()
+  },[Lotterycontract])
+  //updt
+  const updateLottery = async () => {
+    console.log('updating lottery')
+    if(Lotterycontract){
+      const pot = await Lotterycontract.methods.getBalance().call()
+      setLotteryPot(pot)
+      console.log('updating lottery')
+      console.log(pot)
+    }}
+
 
   const connectWallet = async () => {
     if( 
@@ -57,7 +71,7 @@ export const AppProvider = ({ children }) => {
       console.log(error)
     }
   }
-  return <appContext.Provider value={{connectWallet,address,enterLottery}}>{children}</appContext.Provider>
+  return <appContext.Provider value={{connectWallet,address,enterLottery,lotteryPot}}>{children}</appContext.Provider>
 }
 
 export const useAppContext = () => {
