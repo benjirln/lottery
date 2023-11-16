@@ -1,7 +1,7 @@
 .wrapper {
-  background-color: #6C0503;
+  background-color: #9d0b01;
   width: 100%;
-  min-height: 50px;
+  min-height: 80px;
   color: #f1f1f3;
   display: flex;
   align-items: center;
@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  border-bottom: 1px solid #6C0503;
+  border-bottom: 1px solid #9d0b01;
 }
 
 .title {
