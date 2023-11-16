@@ -3,10 +3,16 @@ import Web3 from 'web3'
 import createlotteryContract from '../utils/lotteryContact'
 export const appContext = createContext()
 
+
 export const AppProvider = ({ children }) => {
   const [address, setAddress] = useState('')
   const [web3, setWeb3] = useState(null)
   const [Lotterycontract, setLotterycontract] = useState()
+  const [lotteryPot, setLotteryPot] = useState()
+  const [lotteryPlayers, setLotteryPlayers] = useState([])
+  const [lastWinner, setLastWinner] = useState()
+  const [lotteryId, setLotteryId] = useState()
+
   const connectWallet = async () => {
     if( 
       typeof window.ethereum !== 'undefined' &&
@@ -37,8 +43,21 @@ export const AppProvider = ({ children }) => {
     
 
   }
-
-  return <appContext.Provider value={{connectWallet,address}}>{children}</appContext.Provider>
+  //entr
+  const enterLottery = async () => {
+    try{
+      await Lotterycontract.methods.enter().send({
+        from: address,
+        value: web3.utils.toWei('0.001', 'ether'),
+        gas : 3000000,
+        gasPrice : null,
+       
+      })
+    }catch(error){
+      console.log(error)
+    }
+  }
+  return <appContext.Provider value={{connectWallet,address,enterLottery}}>{children}</appContext.Provider>
 }
 
 export const useAppContext = () => {
