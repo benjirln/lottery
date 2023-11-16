@@ -12,7 +12,7 @@ const LotteryCard = () => {
       </div>
       <div className={style.pot}>
         {/* TODO: Dynamically render the lottery pot */}
-          5ecdc99319c72b3528f227cc6876d41298ef1285
+        Pot : <span className={style.goldAccent}>10 ETH</span>
       </div>
 
       <div className={style.recentWinnerTitle}>Le Gagnant🏆 :</div>
