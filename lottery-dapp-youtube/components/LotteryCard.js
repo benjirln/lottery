@@ -3,7 +3,7 @@ import truncateEthAddress from 'truncate-eth-address'
 import { useAppContext } from '../context/context'
 const LotteryCard = () => {
   // TODO: Get the data needed from context
-  const {enterLottery} = useAppContext()
+  const {enterLottery,lotteryPot} = useAppContext()
   return (
     <div className={style.wrapper}>
       <div className={style.title}>
@@ -12,7 +12,7 @@ const LotteryCard = () => {
       </div>
       <div className={style.pot}>
         {/* TODO: Dynamically render the lottery pot */}
-        Pot 🍯: <span className={style.goldAccent}>10 ETH</span>
+        Pot 🍯: <span className={style.goldAccent}>{lotteryPot}</span>
       </div>
 
       <div className={style.recentWinnerTitle}>🏆Last Winners🏆</div>
