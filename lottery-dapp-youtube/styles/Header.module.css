@@ -1,0 +1,47 @@
+.wrapper {
+  background-color: #6C0503;
+  width: 100%;
+  min-height: 50px;
+  color: #f1f1f3;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #6C0503;
+}
+
+.title {
+  margin-left: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: bolder;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBtn {
+  margin-right: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #9f7453;
+  background-color: #9f7453;
+  border-radius: 0.5rem;
+  padding: 10px;
+  color: #f0f4fa;
+  font-weight: bolder;
+}
+
+.welcome {
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.accentColor {
+  color: rgb(247, 242, 215);
+  font-weight: bold;
+}
