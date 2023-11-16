@@ -8,7 +8,7 @@ export const AppProvider = ({ children }) => {
   const [address, setAddress] = useState('')
   const [web3, setWeb3] = useState(null)
   const [Lotterycontract, setLotterycontract] = useState()
-  const [lotteryPot, setLotteryPot] = useState()
+  const [lotteryPot, setLotteryPot] = useState('O ETH')
   const [lotteryPlayers, setLotteryPlayers] = useState([])
   const [lastWinner, setLastWinner] = useState()
   const [lotteryId, setLotteryId] = useState()
@@ -21,7 +21,7 @@ export const AppProvider = ({ children }) => {
     console.log('updating lottery')
     if(Lotterycontract){
       const pot = await Lotterycontract.methods.getBalance().call()
-      setLotteryPot(pot)
+      setLotteryPot(web3.utils.fromWei(pot, 'ether'))
       console.log('updating lottery')
       console.log(pot)
     }}
